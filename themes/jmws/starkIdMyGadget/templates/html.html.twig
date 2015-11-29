@@ -34,12 +34,15 @@
     <js-placeholder token="{{ placeholder_token|raw }}">
   </head>
   <body{{ attributes }}>
-<p>Hacking core!  Hacking core!  Arruuuuuugah!  Hacking core!</p>
+<p>Welcome to the debug area...</p>
     <a href="#main-content" class="visually-hidden focusable">
       {{ 'Skip to main content'|t }}
     </a>
+    <p>Page top (after this hi_text?): {{ hi_text }}</p>
     {{ page_top }}
+    <p>Page just page:</p>
     {{ page }}
+    <p>Page bottom:</p>
     {{ page_bottom }}
     <js-bottom-placeholder token="{{ placeholder_token|raw }}">
   </body>
