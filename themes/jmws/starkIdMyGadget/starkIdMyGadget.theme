@@ -1,0 +1,10 @@
+<?php
+/*
+ * Theme file.  Purpose and goal: TBD.
+ */
+$config = \Drupal::config('system.maintenance');
+$message  = $config->get('message');
+$langcode = $config->get('langcode');
+print '<p>Hi from the Theme file (starkIdMyGadget.theme)!</p>';
+$hi_text = 'Hi Text!';
+?>
