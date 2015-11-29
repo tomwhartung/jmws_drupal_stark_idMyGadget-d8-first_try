@@ -6,5 +6,13 @@ $config = \Drupal::config('system.maintenance');
 $message  = $config->get('message');
 $langcode = $config->get('langcode');
 print '<p>Hi from the Theme file (starkIdMyGadget.theme)!</p>';
-$hi_text = 'Hi Text!';
+// $hi_text = 'Hi Text!';
+// $vars['hi_text'] = 'Hi Text in starkIdMyGadget_preprocess_page';
+/**
+ * Preprocess the page
+ */
+function starkIdMyGadget_preprocess_page( &$vars ) {
+  print '<p>Hi from starkIdMyGadget_preprocess_page in the Theme file!</p>';
+  $vars['hi_text'] = 'Hi Text in starkIdMyGadget_preprocess_page';
+}
 ?>
