@@ -23,7 +23,7 @@ function starkIdMyGadget_preprocess_page( &$vars ) {
   // print '<p>Hi from starkIdMyGadget_preprocess_page in the Theme file!</p>';
   $vars['hi_text'] = 'Hi Text in starkIdMyGadget_preprocess_page';
   $vars['config_text'] = 'message = ' . $message;
-  $vars['detector_text'] = 'detector = "' . $detector . '"; gadgetdetector = "' . gadgetdetector . '"';
+  $vars['detector_text'] = 'detector = "' . $detector . '"; gadgetdetector = "' . $gadgetdetector . '"';
   $vars['sitenamephone_text'] = 'sitenamephone = "' . $sitenamephone . '"';
   $vars['sitenametablet_text'] = 'sitenametablet = "' . $sitenametablet . '"';
   $vars['sitenamedesktop_text'] = 'sitenamedesktop = "' . $sitenamedesktop . '"';
