@@ -1,0 +1,10 @@
+#
+# Reference: https://www.drupal.org/node/2206551
+#
+starkIdMyGadget.admin_settings:
+  path: '/admin/config/starkIdMyGadget'
+  defaults:
+    _form: '\Drupal\starkIdMyGadget\Form\ModuleConfigurationForm'
+    _title: 'StarkIdMyGadget Configuration Screen'
+  requirements:
+    _permission: 'administer site configuration'
