@@ -1,5 +1,25 @@
-# Schema for the configuration files of the Stark theme.
+# Schema for the configuration files of the StarkIdMyGadget theme.
 
-stark.settings:
+starkIdMyGadget.settings:
   type: theme_settings
   label: 'StarkIdMyGadget settings'
+
+starIdMyGadget.detector:
+  type: config_object
+  label: 'Gadget Detector'
+  mapping:
+    gadgetdetector:
+      type: string
+      label: 'Gadget detector to use'
+    sitenamephone:
+      type: string
+      label: ‘Site Name on Phones’
+    sitenametablet:
+      type: string
+      label: ‘Site Name on Tablets’
+    sitenamedesktop:
+      type: string
+      label: ‘Site Name on Desktops’
+    langcode:
+      type: string
+      label: ‘Language code’
