@@ -6,6 +6,8 @@ package: Jmws
 version: '1.0'
 core: '8.x'
 
+configure: starkIdMyGadget.admin_settings
+
 settings:
   fun_setting: 'trueblood-info.yml'
   serious_setting: 'info.yml file'
