@@ -1,0 +1,6 @@
+# The configuration schema for the StarkIdMyGadget theme's detector.
+
+starkIdMyGadget.detector:
+  thedetector: 'mobile_detect'
+  langcode: en
+
