@@ -1,6 +1,6 @@
 detector: 'detect_mobile_devices'
-sitenamephone: 'Site Name Phone'
-sitenametablet: 'Site Name Tablet'
-sitenamedesktop: 'Site Name Desktop'
+sitenamephone: 'Site Name Phone (default)'
+sitenametablet: 'Site Name Tablet (default)'
+sitenamedesktop: 'Site Name Desktop (default)'
 langcode: en
 
