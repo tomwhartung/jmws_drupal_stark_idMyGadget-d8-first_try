@@ -22,6 +22,25 @@ function experimental_fcn() {
  * Preprocess the page
  */
 function starkIdMyGadget_preprocess_page( &$vars ) {
+  include_once DRUPAL_ROOT . '/core/includes/install.inc';
+  $idmygadgetIsInstalled = drupal_check_module( 'idmygadget' );
+  $vars['idmygadgetIsInstalled'] = $idmygadgetIsInstalled;
+
+  if ( $idmygadgetIsInstalled ) {
+    $vars['idmygadgetIsInstalledText'] = 'The idmygadget module is installed';
+  } else {
+    $vars['idmygadgetIsInstalledText'] = 'The idmygadget module is NOT installed';
+  }
+
+  $nosuchmoduleIsInstalled = drupal_check_module( 'nosuchmodule' );
+  $vars['nosuchmoduleIsInstalled'] = $nosuchmoduleIsInstalled;
+
+  if ( $nosuchmoduleIsInstalled ) {
+    $vars['nosuchmoduleIsInstalledText'] = 'The nosuchmodule module is installed';
+  } else {
+    $vars['nosuchmoduleIsInstalledText'] = 'The nosuchmodule module is NOT installed';
+  }
+
   $sysMaintConfig = \Drupal::config('system.maintenance');
   $message  = $sysMaintConfig->get('message');
   $config = \Drupal::config('idmygadget.settings');
