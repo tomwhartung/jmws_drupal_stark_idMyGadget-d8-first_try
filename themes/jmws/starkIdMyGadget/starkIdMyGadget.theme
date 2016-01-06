@@ -7,26 +7,34 @@
 
 global $vars;
 $vars['hi_text'] = 'Hi Text in global $vars';
+
+function idmygadget_stark_page_top(array &$page_top) {
+  global $vars;
+  $vars['hi_text'] = 'Now we are setting the hi_text in the idmygadget_stark_page_top function.';
+  $page_top['idmygadget_stark'] = ['#markup' => 'This is the top.'];
+}
+
+function experimental_fcn() {
+  return 'experimental_fcn returns this string!';
+}
+
 /**
  * Preprocess the page
  */
 function starkIdMyGadget_preprocess_page( &$vars ) {
   $sysMaintConfig = \Drupal::config('system.maintenance');
   $message  = $sysMaintConfig->get('message');
-  $starkIdmgConfig = \Drupal::config('starkIdMyGadget.detector');
-  $detector  = $starkIdmgConfig->get('detector');
-  $gadgetdetector  = $starkIdmgConfig->get('gadgetdetector');
-  $sitenamephone  = $starkIdmgConfig->get('sitenamephone');
-  $sitenametablet  = $starkIdmgConfig->get('sitenametablet');
-  $sitenamedesktop  = $starkIdmgConfig->get('sitenamedesktop');
-  $langcode = $starkIdmgConfig->get('langcode');
-  // print '<p>Hi from starkIdMyGadget_preprocess_page in the Theme file!</p>';
-  $vars['hi_text'] = 'Hi Text in starkIdMyGadget_preprocess_page';
-  $vars['config_text'] = 'message = ' . $message;
-  $vars['detector_text'] = 'detector = "' . $detector . '"; gadgetdetector = "' . $gadgetdetector . '"';
-  $vars['sitenamephone_text'] = 'sitenamephone = "' . $sitenamephone . '"';
-  $vars['sitenametablet_text'] = 'sitenametablet = "' . $sitenametablet . '"';
-  $vars['sitenamedesktop_text'] = 'sitenamedesktop = "' . $sitenamedesktop . '"';
-  $vars['langcode_text'] = 'langcode = "' . $langcode . '"';
+  $config = \Drupal::config('idmygadget.settings');
+  $gadgetDetector = $config->get('idmygadget_gadget_detector');
+  // idmygadget_show_site_name_
+  $showSiteNamePhone = $config->get('idmygadget_show_site_name_phone');
+  $showSiteNameTablet = $config->get('idmygadget_show_site_name_tablet');
+  $showSiteNameDesktop = $config->get('idmygadget_show_site_name_desktop');
+  $vars['hi_text'] = 'Now we are setting the hi_text in the starkIdMyGadget_preprocess_page function';
+  $vars['hiText'] = 'For grins we also set the hiText in the starkIdMyGadget_preprocess_page function';
+  $vars['gadgetDetectorText'] = 'gadgetDetector = "' . $gadgetDetector . '"';
+  $vars['showSiteNamePhoneText'] = '$showSiteNamePhone = "' . $showSiteNamePhone . '"';
+  $vars['showSiteNameTabletText'] = '$showSiteNameTablet = "' . $showSiteNameTablet . '"';
+  $vars['showSiteNameDesktopText'] = '$showSiteNameDesktop = "' . $showSiteNameDesktop . '"';
 }
 ?>
