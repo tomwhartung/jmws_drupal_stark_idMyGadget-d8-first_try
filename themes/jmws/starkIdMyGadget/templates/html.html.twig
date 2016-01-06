@@ -38,8 +38,13 @@
     <a href="#main-content" class="visually-hidden focusable">
       {{ 'Skip to main content'|t }}
     </a>
-    <p>Page top (after this hi_text?): {{ hi_text }}</p>
+    <p>Page top: try calling experimental_fcn in twig file {{ experimental_fcn }}</p>
     {{ page_top }}
+    <ol>
+      {% for key, value in _context  %}
+        <li>{{ key }}</li>
+      {% endfor %}
+    </ol>
     <p>Page just page (and maybe hi_text?): {{ hi_text }}</p>
     {{ page }}
     <p>Page bottom (and surely the hi_text!): {{ hi_text }}</p>

@@ -67,12 +67,17 @@
 
   <main role="main">
     <p>Just inside main tag, can you see hi_text here? {{ hi_text }}</p>
-    <p>config_text: {{ config_text }}</p>
-    <p>detector_text: {{ detector_text }}</p>
-    <p>sitenamephone_text: {{ sitenamephone_text }}</p>
-    <p>sitenametablet_text: {{ sitenametablet_text }}</p>
-    <p>sitenamedesktop_text: {{ sitenamedesktop_text }}</p>
-    <p>langcode_text: {{ langcode_text }}</p>
+    <p>This is supposed to be the hiText here: {{ hiText }}</p>
+    <p>gadgetDetectorText: {{ gadgetDetectorText }}</p>
+    <p>showSiteNamePhoneText: {{ showSiteNamePhoneText }}</p>
+    <p>showSiteNameTabletText: {{ showSiteNameTabletText }}</p>
+    <p>showSiteNameDesktopText: {{ showSiteNameDesktopText }}</p>
+    <ol>
+      {% for key, value in _context  %}
+        <li>{{ key }}</li>
+      {% endfor %}
+    </ol>
+    <p>experimental_fcn: {{ experimental_fcn }}</p>
 
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
